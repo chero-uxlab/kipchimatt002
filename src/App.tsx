@@ -932,32 +932,32 @@ export default function App() {
       )}
 
       {/* Beautiful Supermarket Shopper Footer (rendered on all views) */}
-      <footer className="bg-plum-dark text-white/80 pt-14 pb-8 mt-auto border-t border-white/10">
+      <footer className="bg-plum-dark text-white/80 pt-10 md:pt-14 pb-8 mt-auto border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Newsletter Banner */}
-          <div className="bg-plum/40 border border-white/15 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 mb-12 shadow-lg">
-            <div className="max-w-md">
+          <div className="bg-plum/40 border border-white/15 rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-10 md:mb-12 shadow-lg">
+            <div className="max-w-xl">
               <h4 className="font-extrabold text-white text-base md:text-lg mb-1.5 flex items-center gap-2">
-                <Mail className="w-5 h-5 text-white" />
+                <Mail className="w-5 h-5 text-pink-300 shrink-0" />
                 <span>Never Miss a Kikapu Deal</span>
               </h4>
-              <p className="text-white/70 text-xs leading-relaxed">
+              <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
                 Subscribe to our weekly circulars to receive special discounts, hot new arrivals, and coupon prompts straight to your inbox.
               </p>
             </div>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2 w-full md:max-w-md">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2.5 w-full lg:max-w-md">
               <input 
                 type="email" 
                 required
                 placeholder="Enter your email address"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-full border border-white/30 bg-white/10 text-white placeholder-white/50 text-xs focus:ring-2 focus:ring-white/40 outline-none"
+                className="w-full flex-1 px-4 py-3 rounded-xl sm:rounded-full border border-white/30 bg-white/10 text-white placeholder-white/50 text-xs focus:ring-2 focus:ring-pink-400 outline-none transition-all"
               />
               <button 
                 type="submit"
-                className="bg-white hover:bg-gray-100 text-plum font-extrabold text-xs px-6 py-3 rounded-full flex items-center gap-1.5 cursor-pointer transition-colors shadow-md whitespace-nowrap"
+                className="w-full sm:w-auto bg-white hover:bg-gray-100 text-plum font-extrabold text-xs px-6 py-3 rounded-xl sm:rounded-full flex items-center justify-center gap-2 cursor-pointer transition-all shadow-md whitespace-nowrap active:scale-95"
               >
                 <span>Subscribe</span>
                 <Send className="w-3.5 h-3.5 text-plum" />
@@ -966,68 +966,68 @@ export default function App() {
           </div>
 
           {/* Information grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 md:mb-12">
             
             {/* Column 1: Store Intro */}
             <div className="space-y-4">
-              <h4 className="font-black text-white text-sm tracking-wide uppercase">
+              <h4 className="font-black text-white text-sm tracking-wider uppercase border-b border-white/10 pb-2 sm:border-none sm:pb-0">
                 {settings.storeName}
               </h4>
               <p className="text-xs leading-relaxed text-white/60">
                 Your most trusted online grocery catalog and household essentials supermarket across Kenya. Delivering fresh food and appliances directly to your home in under 90 minutes.
               </p>
-              <div className="space-y-2 text-xs font-semibold">
-                <span className="flex items-center gap-2 text-white/80"><Phone className="w-4 h-4 text-white" /><span>{settings.storePhone}</span></span>
-                <span className="flex items-center gap-2 text-white/80"><Mail className="w-4 h-4 text-white" /><span>{settings.storeEmail}</span></span>
-                <span className="flex items-center gap-2 text-white/80"><MapPin className="w-4 h-4 text-white" /><span>Nairobi, Kenya</span></span>
+              <div className="space-y-2.5 text-xs font-semibold">
+                <span className="flex items-center gap-2.5 text-white/80"><Phone className="w-4 h-4 text-pink-300 shrink-0" /><span className="break-all">{settings.storePhone}</span></span>
+                <span className="flex items-center gap-2.5 text-white/80"><Mail className="w-4 h-4 text-pink-300 shrink-0" /><span className="break-all">{settings.storeEmail}</span></span>
+                <span className="flex items-center gap-2.5 text-white/80"><MapPin className="w-4 h-4 text-pink-300 shrink-0" /><span>Nairobi, Kenya</span></span>
               </div>
             </div>
 
             {/* Column 2: Quick Shop Categories */}
             <div className="space-y-4">
-              <h4 className="font-black text-white text-sm tracking-wide uppercase">
+              <h4 className="font-black text-white text-sm tracking-wider uppercase border-b border-white/10 pb-2 sm:border-none sm:pb-0">
                 Shop Categories
               </h4>
-              <div className="flex flex-col gap-2.5 text-xs font-semibold">
-                <button onClick={() => handleCategorySelect('food cupboard')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Food Cupboard</button>
-                <button onClick={() => handleCategorySelect('fresh food')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Fresh Food & Dairy</button>
-                <button onClick={() => handleCategorySelect('beverages')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Beverages</button>
-                <button onClick={() => handleCategorySelect('baby & kids')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Baby & Kids Care</button>
-                <button onClick={() => handleCategorySelect('electronics')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Home Electronics</button>
-                <button onClick={() => handleCategorySelect('beauty')} className="w-fit hover:text-white transition-colors text-left cursor-pointer">Beauty & Cosmetics</button>
+              <div className="flex flex-col gap-2 text-xs font-semibold">
+                <button onClick={() => handleCategorySelect('food cupboard')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Food Cupboard</button>
+                <button onClick={() => handleCategorySelect('fresh food')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Fresh Food & Dairy</button>
+                <button onClick={() => handleCategorySelect('beverages')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Beverages</button>
+                <button onClick={() => handleCategorySelect('baby & kids')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Baby & Kids Care</button>
+                <button onClick={() => handleCategorySelect('electronics')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Home Electronics</button>
+                <button onClick={() => handleCategorySelect('beauty')} className="w-fit hover:text-white hover:translate-x-1 transition-all text-left cursor-pointer text-white/70 py-0.5">Beauty & Cosmetics</button>
               </div>
             </div>
 
             {/* Column 3: Customer Service */}
             <div className="space-y-4">
-              <h4 className="font-black text-white text-sm tracking-wide uppercase">
+              <h4 className="font-black text-white text-sm tracking-wider uppercase border-b border-white/10 pb-2 sm:border-none sm:pb-0">
                 Customer Care
               </h4>
-              <div className="flex flex-col gap-2.5 text-xs font-semibold">
-                <a href="#" className="hover:text-white transition-colors">Help Center & FAQs</a>
-                <a href="#" className="hover:text-white transition-colors">Rider Delivery Information</a>
-                <a href="#" className="hover:text-white transition-colors">7-Day Refund Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Track Active Shipment</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-white transition-colors">Contact Support Desk</a>
+              <div className="flex flex-col gap-2 text-xs font-semibold">
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Help Center & FAQs</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Rider Delivery Information</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">7-Day Refund Policy</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Track Active Shipment</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Terms of Service</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Contact Support Desk</a>
               </div>
             </div>
 
             {/* Column 4: Operational links */}
             <div className="space-y-4">
-              <h4 className="font-black text-white text-sm tracking-wide uppercase">
+              <h4 className="font-black text-white text-sm tracking-wider uppercase border-b border-white/10 pb-2 sm:border-none sm:pb-0">
                 Supermarket Links
               </h4>
-              <div className="flex flex-col gap-2.5 text-xs font-semibold">
-                <a href="#" className="hover:text-white transition-colors">About Kipchimatt</a>
-                <a href="#" className="hover:text-white transition-colors">Careers & Job Openings</a>
-                <a href="#" className="hover:text-white transition-colors">Our Kenyan Partners</a>
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <div className="flex flex-col gap-2 text-xs font-semibold">
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">About Kipchimatt</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Careers & Job Openings</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Our Kenyan Partners</a>
+                <a href="#" className="w-fit hover:text-white hover:translate-x-1 transition-all text-white/70 py-0.5">Privacy Policy</a>
                 <button 
                   onClick={() => setCurrentView('admin')}
-                  className="w-fit bg-white/10 hover:bg-white/15 text-white font-bold py-1.5 px-4 rounded-lg flex items-center gap-1.5 cursor-pointer transition-colors"
+                  className="mt-2 w-fit bg-white/10 hover:bg-white/20 border border-white/15 text-white font-extrabold py-2 px-4 rounded-xl flex items-center gap-2 cursor-pointer transition-all text-xs"
                 >
-                  <Laptop className="w-3.5 h-3.5" />
+                  <Laptop className="w-3.5 h-3.5 text-pink-300" />
                   <span>Admin Portal Console</span>
                 </button>
               </div>
@@ -1035,19 +1035,19 @@ export default function App() {
           </div>
 
           {/* Bottom Badge Row */}
-          <div className="border-t border-white/10 pt-5 mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-            <div className="flex items-center gap-2.5 flex-wrap">
-              <span className="text-[10px] text-white/40 uppercase tracking-widest font-extrabold mr-2">We Accept</span>
-              <span className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg font-bold text-white/85 flex items-center gap-1">
-                <CreditCard className="w-3.5 h-3.5 text-green" />
+          <div className="border-t border-white/10 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start gap-2 flex-wrap">
+              <span className="text-[10px] text-white/50 uppercase tracking-widest font-extrabold mr-1">We Accept</span>
+              <span className="bg-white/5 border border-white/15 px-3 py-1.5 rounded-lg font-bold text-white/90 flex items-center gap-1.5 text-xs">
+                <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
                 <span>M-PESA (POD)</span>
               </span>
-              <span className="bg-white/10 text-white px-3 py-1 rounded-lg">Visa</span>
-              <span className="bg-white/10 text-white px-3 py-1 rounded-lg">Mastercard</span>
-              <span className="bg-white/10 text-white font-semibold">Cash on Delivery</span>
+              <span className="bg-white/10 border border-white/10 text-white px-3 py-1.5 rounded-lg text-xs font-semibold">Visa</span>
+              <span className="bg-white/10 border border-white/10 text-white px-3 py-1.5 rounded-lg text-xs font-semibold">Mastercard</span>
+              <span className="bg-white/10 border border-white/10 text-white px-3 py-1.5 rounded-lg text-xs font-semibold">Cash on Delivery</span>
             </div>
             
-            <p className="text-white/40 text-[11px] font-bold">
+            <p className="text-white/50 text-[11px] font-bold">
               &copy; {new Date().getFullYear()} {settings.storeName}. All rights reserved. Delighting Kenyan households daily.
             </p>
           </div>

@@ -1102,7 +1102,8 @@ export default function Storefront({
                     <button
                       key={brand}
                       onClick={() => onBrandSelect(brand)}
-                      className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-plum dark:hover:border-orange hover:text-plum dark:hover:text-orange font-extrabold text-xs px-5 py-2.5 rounded-full cursor-pointer transition-all shadow-sm hover:shadow-md active:scale-95 text-gray-750 dark:text-gray-250"
+                      style={{ backgroundColor: 'white' }}
+                      className="bg-white text-plum dark:bg-white dark:text-plum border border-gray-200 font-extrabold text-xs px-5 py-2.5 rounded-full cursor-pointer transition-all shadow-sm hover:shadow-md hover:scale-105 active:scale-95"
                     >
                       {brand}
                     </button>
